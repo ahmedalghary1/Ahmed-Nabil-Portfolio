@@ -5,18 +5,18 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Menu, X, Sun, Moon, Globe, Mail, Github, Linkedin, Twitter, ArrowRight, Code, Briefcase, Award, GraduationCap, MessageSquare, FileText, ChevronDown, ExternalLink, Check } from 'lucide-react';
 
 const PortfolioWebsite = () => {
+  const [language, setLanguage] = useState<'en' | 'ar'>('en');
   const [theme, setTheme] = useState('dark');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
-  const [language, setLanguage] = useState<'en' | 'ar'>('en');
   const isRTL = language === 'ar';
 
-  // Translations
   const t = {
     en: {
+      // Translations
       nav: {
         home: 'Home',
         about: 'About',
