@@ -556,7 +556,7 @@ const PortfolioWebsite = () => {
                 className={`${theme === 'dark' ? 'bg-slate-800/50' : 'bg-white'} backdrop-blur-lg rounded-2xl p-6 border ${theme === 'dark' ? 'border-slate-700' : 'border-gray-200'}`}
               >
                 <h3 className="text-xl font-semibold mb-4 text-purple-400">
-                  {content.skills.categories[category]}
+                  {content.skills.categories[category as keyof typeof content.skills.categories]}
                 </h3>
                 <div className="space-y-3">
                   {items.map((skill, j) => (
